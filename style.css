@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+:root {
+    color: rgb(241, 239, 236);
+    font-family: 'Source Code Pro';
+}
+
+body::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #677691;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #90929e;
+}
+
+.navbar {
+    position: fixed;
+    background-color: #2C2E3D;
+    transition: width 0.3s;
+    width: 5rem;
+    box-shadow: 0.25px 0.25px 10px rgb(33, 33, 33);
+}
+
+.navbar:hover {
+    width: 12rem;
+}
+
+.navbar:hover ~.main {
+    margin-left: 12rem;
+}
+
+.navs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+  }
+
+body {
+    background-color: #4F5D75;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    margin-left: 5rem;
+    padding: 0;
+    transition: margin-left 0.3s;
+}
+
+
+.header {
+    padding: 1rem;
+    background-image: linear-gradient(150deg, #ec4d9a, #a70196);
+    font-family: 'Press Start 2P';
+    box-shadow: 0.25px 0.25px 15px rgb(33, 33, 33);
+}
+
+.title {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.logo {
+    width: 4rem;
+    height: 4rem;
+    padding: 2vh;
+}
+
+.main-title {
+    margin: 0;
+    padding: 2vh;
+    font-size: 4rem;
+}
+
+.main-title:hover {
+    color: #e07ceb;
+    transition: 0.3s;
+}
+
+.tagline {
+    margin: 15px;
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.entry-form {
+    margin: 2rem;
+    font-size: 1.25rem;
+}
+
+.entry-form fieldset {
+    border-color: rgb(241, 239, 236);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.entry-form input {
+    font-family: 'Source Code Pro';
+    height: 20px;
+    width: 12vw;
+    padding: 10px;
+    border: none;
+}
+
+.new-submit-btn {
+    font-family: 'Press Start 2P';
+    background-image: linear-gradient(170deg, #3b4ce4, #0d198a);
+    font-size: 1rem; 
+    color: rgb(241, 239, 236);
+    height: 40px;
+    width: 7rem;
+    margin: 5px;
+    border: none;
+    border-radius: 40px;
+}
+
+.new-submit-btn:hover {
+    background-image: linear-gradient(150deg, #3b4ce4, #0d198a);
+    font-size: 1rem; 
+    box-shadow: 5px 5px rgb(33, 33, 33);
+    transition: 0.4s;
+}
+
+.entries {
+    margin: 2rem;
+    font-size: 1rem;
+}
+
+.entry-card {
+    margin: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-image: linear-gradient(150deg, #b859ba, #743c96);
+    box-shadow: 6px 6px #242f91;
+    
+}
+
+
