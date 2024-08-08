@@ -1,7 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
 :root {
-    color: rgb(241, 239, 236);
     font-family: 'Source Code Pro';
+    color: rgb(241, 239, 236);
+    --shadow-color: rgb(45, 45, 45);
+    --pink-color: #ec4d9a;
+    --dark-pink-color: #9c018c;
+    --blue-color: #3b4ce4;
+    --dark-blue-color: #0d198a;
+    --purple-color: #a259a3;
+    --dark-purple-color: #653881;
+    --gray-color: #3f4552;
+    --dark-gray-color: #2c303d;
 }
 
 body::-webkit-scrollbar {
@@ -19,10 +30,10 @@ body::-webkit-scrollbar-thumb {
 
 .navbar {
     position: fixed;
-    background-color: #2C2E3D;
+    background-color: var(--dark-gray-color);
     transition: width 0.3s;
     width: 5rem;
-    box-shadow: 0.25px 0.25px 10px rgb(33, 33, 33);
+    box-shadow: 0.25px 0.25px 10px var(--shadow-color);
 }
 
 .navbar:hover {
@@ -44,7 +55,7 @@ body::-webkit-scrollbar-thumb {
   }
 
 body {
-    background-color: #4F5D75;
+    background-color: var(--gray-color);
     margin: 0;
     padding: 0;
 }
@@ -57,39 +68,40 @@ body {
 
 
 .header {
-    padding: 1rem;
-    background-image: linear-gradient(150deg, #ec4d9a, #a70196);
+    padding: 0.5rem;
+    padding-left: 2rem;
+    background-image: linear-gradient(150deg, var(--pink-color), var(--dark-pink-color));
     font-family: 'Press Start 2P';
-    box-shadow: 0.25px 0.25px 15px rgb(33, 33, 33);
+    box-shadow: 0.25px 0.25px 15px var(--shadow-color);
 }
 
 .title {
     display: flex;
     padding: 0;
     margin: 0;
+    margin-top: 1.25rem;
 }
 
 .logo {
-    width: 4rem;
-    height: 4rem;
-    padding: 2vh;
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 0.5rem;
 }
 
 .main-title {
     margin: 0;
-    padding: 2vh;
-    font-size: 4rem;
-}
-
-.main-title:hover {
-    color: #e07ceb;
-    transition: 0.3s;
+    padding: 0.5rem;
+    font-size: 3.5rem;
+    letter-spacing: 0.4rem;
+    text-shadow: 4px 4px var(--dark-gray-color);
 }
 
 .tagline {
-    margin: 15px;
+    padding: 1rem;
+    padding-bottom: 1rem;
     font-weight: 300;
     font-size: 1rem;
+    text-shadow: 2.5px 2.5px var(--dark-gray-color);
 }
 
 .entry-form {
@@ -98,7 +110,8 @@ body {
 }
 
 .entry-form fieldset {
-    border-color: rgb(241, 239, 236);
+    align-items: center;
+    justify-content: space-between;
     padding: 30px;
     border-radius: 20px;
 }
@@ -106,14 +119,13 @@ body {
 .entry-form input {
     font-family: 'Source Code Pro';
     height: 20px;
-    width: 12vw;
     padding: 10px;
     border: none;
 }
 
-.new-submit-btn {
+#new-submit-btn {
     font-family: 'Press Start 2P';
-    background-image: linear-gradient(170deg, #3b4ce4, #0d198a);
+    background-image: linear-gradient(170deg, var(--blue-color), var(--dark-blue-color));
     font-size: 1rem; 
     color: rgb(241, 239, 236);
     height: 40px;
@@ -121,16 +133,17 @@ body {
     margin: 5px;
     border: none;
     border-radius: 40px;
+    box-shadow: 5px 5px var(--shadow-color);
 }
 
-.new-submit-btn:hover {
-    background-image: linear-gradient(150deg, #3b4ce4, #0d198a);
-    font-size: 1rem; 
-    box-shadow: 5px 5px rgb(33, 33, 33);
+#new-submit-btn:hover {
+    background-image: linear-gradient(150deg, var(--blue-color), var(--dark-blue-color));
+    font-size: 1.1rem; 
+    cursor: pointer;
     transition: 0.4s;
 }
 
-.entries {
+#entries {
     margin: 2rem;
     font-size: 1rem;
 }
@@ -138,10 +151,12 @@ body {
 .entry-card {
     margin: 1rem;
     margin-bottom: 2rem;
-    padding: 1rem;
-    background-image: linear-gradient(150deg, #b859ba, #743c96);
-    box-shadow: 6px 6px #242f91;
-    
+    padding: 1.5rem;
+    background-image: linear-gradient(150deg, var(--purple-color), var(--dark-purple-color));
+    box-shadow: 6px 6px var(--dark-blue-color);
 }
 
+.entry-card h3 {
+    margin: auto;
+}
 
