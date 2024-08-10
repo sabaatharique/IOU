@@ -186,11 +186,29 @@ body {
     box-shadow: 6px 6px var(--shadow-color);
 }
 
-.entry-card h3 {
-    margin: auto;
+.details h3 {
+    margin: 0;
+    margin-bottom: 20px;
 }
 
 .details {
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: space-between;
+}
+
+.log {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    border-top: 1.5px solid;
+}
+
+.logs p {
     text-wrap: wrap;
+    margin: 10px;
+    padding: 10px;
 }
 
