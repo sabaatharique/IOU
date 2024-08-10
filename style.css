@@ -4,15 +4,55 @@
 :root {
     font-family: 'Source Code Pro';
     color: rgb(241, 239, 236);
-    --shadow-color: rgb(45, 45, 45);
-    --pink-color: #ec4d9a;
-    --dark-pink-color: #9c018c;
-    --blue-color: #3b4ce4;
-    --dark-blue-color: #0d198a;
-    --purple-color: #a259a3;
-    --dark-purple-color: #653881;
+    --shadow-color: rgb(30, 32, 36);
+    --pink-color: #d64898;
+    --dark-pink-color: #9c2781;
+    --blue-color: #3460e1;
+    --dark-blue-color: #2d3592;
+    --purple-color: #9a44a5;
+    --dark-purple-color: #69328c;
     --gray-color: #3f4552;
     --dark-gray-color: #2c303d;
+}
+
+@media only screen and (max-width: 600px) {
+    .main {
+        margin-bottom: 6rem;
+    }
+
+    .navbar {
+        bottom: 0;
+        width: 100vw;
+        height: 4rem;
+        transition: height 0.3s ease;
+    }
+
+    .navbar:hover {
+        height: 10rem;
+        transition: height 0.3s ease;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .main {
+        margin-left: 5rem;
+    }
+
+    .navbar {
+        top: 0;
+        width: 5rem;
+        height: 100vh;  
+        transition: width 0.3s ease;   
+    }
+
+    .navbar:hover {
+        width: 10rem;
+        transition: width 0.3s ease;
+    }
+
+    .navbar:hover ~.main {
+        margin-left: 10rem;
+    }
 }
 
 body::-webkit-scrollbar {
@@ -31,17 +71,7 @@ body::-webkit-scrollbar-thumb {
 .navbar {
     position: fixed;
     background-color: var(--dark-gray-color);
-    transition: width 0.3s;
-    width: 5rem;
     box-shadow: 0.25px 0.25px 10px var(--shadow-color);
-}
-
-.navbar:hover {
-    width: 12rem;
-}
-
-.navbar:hover ~.main {
-    margin-left: 12rem;
 }
 
 .navs {
@@ -61,11 +91,9 @@ body {
 }
 
 .main {
-    margin-left: 5rem;
     padding: 0;
     transition: margin-left 0.3s;
 }
-
 
 .header {
     padding: 0.5rem;
@@ -119,7 +147,9 @@ body {
 .entry-form input {
     font-family: 'Source Code Pro';
     height: 20px;
+    margin: 10px;
     padding: 10px;
+    width: 150px;
     border: none;
 }
 
@@ -153,10 +183,14 @@ body {
     margin-bottom: 2rem;
     padding: 1.5rem;
     background-image: linear-gradient(150deg, var(--purple-color), var(--dark-purple-color));
-    box-shadow: 6px 6px var(--dark-blue-color);
+    box-shadow: 6px 6px var(--shadow-color);
 }
 
 .entry-card h3 {
     margin: auto;
+}
+
+.details {
+    text-wrap: wrap;
 }
 

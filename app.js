@@ -7,51 +7,56 @@ const inpOwesYou = document.getElementById('owed-to-you');
 const inpDate = document.getElementById('date');
 const inpNote = document.getElementById('note');
 
-let allEntries = [];
-
-class Log {
-    constructor(owesYou, youOwe, date, note) {
-        this.owesYou = owesYou;
-        this.youOwe = youOwe;
-        this.date = date;
-        this.note = note;
-    }
+const retrievefromLocalStorage = (name) => {
+    const logs = localStorage.getItem(name);
+    if (logs == null)
+        return [];
+    return JSON.parse(logs);
 }
 
-class Entry {
-    constructor(name) {
-        this.name = name;
-        this.logs = [];
-    }
+const createLog = (owesYou, youOwe, date, note) => ({
+    owesYou,
+    youOwe,
+    date,
+    note
+});
 
-    add(owesYou, youOwe, date, note) {
-        let temp = new Log(owesYou, youOwe, date, note);
-        this.logs.push(temp);
-    }
-}
-
-newBtn.onclick = function () {
-    if (inpName.value && (inpYouOwe.value || inpOwesYou.value)) {
-        let entry = new Entry(inpName.value);
-        entry.add(inpYouOwe.value, inpOwesYou.value, inpDate.value, inpNote.value);
-        localStorage.setItem(inpName.value, JSON.stringify(entry.logs));
+const addNewLog = () => {
+    const name = inpName.value;
+    const owesYou = inpOwesYou.value;
+    const youOwe = inpYouOwe.value;
+    const date = inpDate.value;
+    const note = inpNote.value;
+    
+    if (name && (owesYou|| youOwe)) {
+        const logs = retrievefromLocalStorage(name);
+        const temp = createLog(owesYou, youOwe, date, note);
+        logs.push(temp);
+        localStorage.setItem(name, JSON.stringify(logs));
         location.reload();
     }
-};
-
-for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
-    const value = localStorage.getItem(key);
-
-    output.innerHTML += `<div class="entry-card">
-                            <div class="name">
-                                <h3>${key}</h3>
-                                <button class="add-btn" type="button">ADD</button>
-                            </div>
-                            <div class="details"> 
-                                <p>${value}</p>
-                                <button class="del-btn" type="button">DELETE</button>
-                            </div>
-                        </div>`;
 }
+
+const displayEntries = () => {
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        const value = localStorage.getItem(key);
+    
+        output.innerHTML += `<div class="entry-card">
+                                <div class="name">
+                                    <h3>${key}</h3>
+                                    <button class="add-btn" type="button">ADD</button>
+                                </div>
+                                <div class="details"> 
+                                    <p>${value}</p>
+                                    <button class="del-btn" type="button">DELETE</button>
+                                </div>
+                            </div>`;
+    }
+}
+
+newBtn.onclick = addNewLog;
+
+displayEntries();
+
 
