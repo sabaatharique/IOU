@@ -50,6 +50,11 @@
         justify-content: space-evenly;
     }
 
+    .nav-items {
+        justify-content: center;
+        width: 50%;
+    }
+
     .nav-btn {
         flex-direction: column;
         height: 8rem;
@@ -137,7 +142,6 @@ body::-webkit-scrollbar-thumb {
 .nav-items {
     display: flex;
     align-items: center;
-    justify-content: left;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
